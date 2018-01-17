@@ -1,0 +1,2 @@
+webpackJsonp([5],{"./node_modules/json-loader/index.js!./.cache/json/thong-song.json":function(o,n){o.exports={pathContext:{path:"/thong-song/"}}}});
+//# sourceMappingURL=path---thong-song-74c018c0e07153a64604.js.map

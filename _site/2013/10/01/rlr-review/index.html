@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-stack developer and multi-instrumentalist, currently immersed in the wonders of San Francisco.">
+
+    <title>Reflexive loopers for solo musical improvisation: a brief review - Jamie Henson</title>
+
+    <link rel="canonical" href="http://jh47.com/2013/10/01/rlr-review/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jamie Henson</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="/cv/">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Reflexive loopers for solo musical improvisation: a brief review</h1>
+                    
+                    <span class="meta">Posted by Jamie Henson on October 1, 2013</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Whilst reading through the proceedings from this year’s CHI conference, this paper [1] caught my eye especially - due to my interests in both musically-oriented computing and jazz.</p>
+
+<p>In terms of a concept, the reflexive looper (or RLR as it’s referred to in the paper) would definitely benefit me as a musician, as it directly tackles two of the main issues I encounter when practising alone - the absence of adaptive interaction between musician and a loop pedal, and the “stylistic mismatch” between musician and “minus-one” recordings which omit the part you are playing.</p>
+
+<!-- more -->
+
+<p>The way it works is interesting, employing a wide host of machine learning techniques to isolate features from live performance - extracting attributes such as the pitch extremities and the variance of pitch over a set time window. Using this information, the RLR is able to dynamically and interactively simulate the other two members of a jazz trio using one musician’s input (regardless of whether they’re playing bass, melody or chords) - which is highly impressive.</p>
+
+<p>Unfortunately, while the RLR liberates the musician from “canned music”, it imposes the restriction of having to provide training data in the form of a chord chart beforehand, and requires MIDI information as well as a live audio stream. This significantly slows the process of self-accompaniment.</p>
+
+<p>The implementation as demonstrated in the affiliated video capably shows how the RLR works, but not to a standard that I would be comfortable using myself as a musician. That said, this is a concept, which if embraced commercially, could evolve into a highly successful product. Indeed, commercial “band in a box” packages do exist, such as the Session Mode in the upcoming game Rocksmith 2014 [2], but an RLR provides a more portable interactive accompaniment solution without the specific need for a computer or games console.</p>
+
+<iframe width="500" height="300" src="//www.youtube.com/embed/Xp8tixrPM1U" frameborder="0" allowfullscreen=""></iframe>
+
+<p><strong>References:</strong></p>
+
+<p>_[1] Reflexive loopers for solo musical improvisation, F. Pachet et al. (CHI 2013),
+_<a href="http://dl.acm.org/citation.cfm?id=2481303">http://dl.acm.org/citation.cfm?id=2481303</a></p>
+
+<p><em>[2] Session mode in Rocksmith 2014, Ubisoft (2013),</em>
+<a href="http://rocksmith.ubi.com/rocksmith/en-GB/features/index.aspx">http://rocksmith.ubi.com/rocksmith/en-GB/features/index.aspx</a></p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2013/09/17/working-in-games/" data-toggle="tooltip" data-placement="top" title="Working in Games">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2013/10/11/rbireview/" data-toggle="tooltip" data-placement="top" title="Reality-based interaction: a framework for post-WIMP interfaces - a review">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/HensonJamie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jamiehenson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Jamie Henson 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

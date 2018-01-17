@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-stack developer and multi-instrumentalist, currently immersed in the wonders of San Francisco.">
+
+    <title>Android tinkering - Jamie Henson</title>
+
+    <link rel="canonical" href="http://jh47.com/2012/03/31/android-tinkering/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jamie Henson</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="/cv/">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Android tinkering</h1>
+                    
+                    <span class="meta">Posted by Jamie Henson on March 31, 2012</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Recently, I chucked out my old Nokia 5800, which I’d had for many years - I was on a rolling contract that was far too ambitious to fill (given the amount I actually use my phone for calls…) and saw a lesser contract with an Android phone for a cheaper price, so I took it.</p>
+
+<p>I got a Samsung Galaxy Ace, which in comparison to other Android phones I’ve encountered (S, S2, Defy, Desire, Wildfire) is a modest and capable phone but with a few notable limitations. I set about minimising the effect of those limitations to get the most out of it I could. I’m stuck with it for 2 years, after all. While these steps suit the Ace, they should suit any Android user, so they may help you too.</p>
+
+<!-- more -->
+
+<p>Firstly, the phone has a woeful amount of internal storage (around 160MB). With no extra steps, most apps you download will sit right on the phone itself, and, along with all the basic phone data (messages, contacts etc…), 160MB won’t get you very far. Therefore, the solution is to utilise the phone’s SD card, which you can easily replace for a larger capacity up to 32GB. An app called <a href="https://play.google.com/store/apps/details?id=com.buak.Link2SD&amp;hl=en" title="Link2SD">Link2SD</a> does just that, by allowing you to transfer all apps to the SD card. The result: a lesser-burdened phone that has almost no app/storage limitation.</p>
+
+<p>Step two: all smartphones have a reputation for having tragic battery life. When I was a lad, my Nokia 3210 would last for a good fortnight, and was tough as old boots. Lightning could strike it, and the only result would be a full battery. These new phones aren’t so resilient, and there’s no sure fire way to reduce battery usage. However, these steps help:</p>
+
+<ul>
+  <li>No GPS at all if you can help it. It drinks battery.</li>
+  <li>Turn the background light down to 10%, and/or get an app to automatically turn off the screen when you’re not using the phone. The display is one of the main drainers.</li>
+  <li>Turn off auto-sync, or increase the amount of time between app scans. You’re not desperate to check your Facebook every 10 minutes, right?</li>
+  <li>Don’t leave Wifi on when you’re not using it, and switch to a 2G network if you have a strong signal.</li>
+  <li>Don’t have an animated wallpaper, and stay off the games. CPU usage = battery drain.
+Basically, don’t run a small Estonian village off it.</li>
+</ul>
+
+<p>However, there’s one step I recently took that required a little more effort. The standard Android OS (Gingerbread in my case) ran fairly well on my phone, although I had noticed general lag and had heard about custom distributions that significantly improve performance by cutting out some of the bloatware in the background. I installed CyanogenMod (7.2 RC1) last evening, and I’ve encountered no difficulties - aside from having to manually install the Google Play app to download the rest.</p>
+
+<p>It’s by no means a simple operation, all the steps are listed <a href="http://forum.xda-developers.com/showthread.php?t=1543521">here</a>. It involves installing a recovery program (ClockworkMod), backing up all of your data, and replacing the phone’s operating system (duh) from your correctly-formatted SD card - which means you’re essentially starting again. I kept my contacts, but I lost all my messages. Not a problem since I just got my phone and didn’t have that many, but for those who like to hoard messages for laziness or sentimentality, this will force a clearout :). Quite a few scary loading screens involved for those unfamiliar!</p>
+
+<p>Anyway, CyanogenMod is working an absolute treat. Angry Birds Space crawled before, now it runs flawlessly. Menus snap open, and with cooler effects. The only downsides I encountered were that the CyanogenMod torch didn’t work (Gingerbread didn’t even have a torch app), and that the front buttons flashed on and off from time to time, which is quite distracting. For the first, I just got a third-party app for a torch. No worries. For the second, I got an app which forced the button lights on or off. Sorted.</p>
+
+<p>If you have a Galaxy S2, or some other NASA-powered device (relatively speaking), then this probably isn’t worth doing. But, since I can’t upgrade to Ice Cream Sandwich (officially), this is the best hope for the Galaxy Ace for now. My friend’s Wildfire, a worse phone in many respects, couldn’t even answer calls without crashing, now it’s running as smooth as anything.</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2012/03/28/morphogenesis/" data-toggle="tooltip" data-placement="top" title="Morphogenesis">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2012/04/30/mustang/" data-toggle="tooltip" data-placement="top" title="Fender Mustang I Review">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/HensonJamie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jamiehenson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Jamie Henson 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

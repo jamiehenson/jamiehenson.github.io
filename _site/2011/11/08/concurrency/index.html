@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-stack developer and multi-instrumentalist, currently immersed in the wonders of San Francisco.">
+
+    <title>Do I like concurrency? Yes and no. - Jamie Henson</title>
+
+    <link rel="canonical" href="http://jh47.com/2011/11/08/concurrency/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jamie Henson</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="/cv/">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Do I like concurrency? Yes and no.</h1>
+                    
+                    <span class="meta">Posted by Jamie Henson on November 8, 2011</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>That title comes from a dire pun of one of my coursemates, I couldn’t think of something better so I dropped in his comedic witticisms.</p>
+
+<p>Today when we hear about modern computers we’re guaranteed to hear about multiple cores, they’re even a selling point in most cases. Then again, how the stores advertise on TV isn’t exactly a decent reflection on what the machines they’re selling actually have and can do. “2000 photos? But this one can hold 2100 photos, and it’s HD!” comes to mind. Regardless, more cores are generally better, but they’re only useful when software is programmed to make use of them. That’s why students like me have to learn to do that. Eep.</p>
+
+<!-- more -->
+
+<p>The concepts behind multi-core processing seemed pretty simple when we were first introduced to it. You take a task, and split it into two, or four. Or, you just run two or four tasks alongside one another. However, when actually coming to write code for concurrent applications, it soon became clear just how much of a task it actually is. Traditionally, programs and algorithmic thought processes work sequentially, i.e. you do this, then this, then this and then you spit out this. Here, you do that, but in four different places at the same time, and each separate thread of processing may well need things from other threads, and so they have to wait for each other at certain points until one of them has finished. A whole raft of problems come in - what if all threads are waiting for each other? What if one of the threads never makes it? In these cases something called ‘deadlock’ comes about, which is like four equally dodgy drivers hesitantly waiting at a crossroads for someone to go. Controlling multiple cores is like herding cats if you’re new to it.</p>
+
+<p>The language we’re using at the moment is one called XC, which is based upon the old timer, C. There are more widespread languages such as OpenCL et cetera, but the company behind the language, XMOS, has strong footings here in Bristol, and one of our lecturers wrote the thing, so that’s kind of grounding for the decision (or something like that). Plus, we got some snazzy boards to play with, which beep and are able to play the Pingu theme tune with enough musical dexterity on the on-board buttons. XC’s not a bad language, but while it kindly does away with memory pointers (those little buggers), it strangely omits things like floating point operations, so it’s just integers. I grew to dislike it however after only the first marked assignment (about ants gathering food). Maybe it’s the concurrency principle behind it. Or maybe I just hate ants. Who knows.</p>
+
+<p>One thing that’s clear though is that this whole concurrency business is pretty damn important. I (well, me and another CompSci) used multithreading last year for a Java game, and that didn’t seem anywhere near as difficult as even this small portion of XC I have seen. That’s the thing I suppose with computing, everything seems easy and is taken for granted until you use something less intuitive, or you strip away the abstraction and take a peek at what’s underneath. Then it’s just a matter of how far you go until your head is completely blagged.</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2011/09/09/haskellcrunching/" data-toggle="tooltip" data-placement="top" title="Haskell Crunching">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2011/12/12/kugelschwung/" data-toggle="tooltip" data-placement="top" title="Kugelschwung!">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/HensonJamie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jamiehenson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Jamie Henson 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

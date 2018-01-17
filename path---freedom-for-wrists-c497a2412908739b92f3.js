@@ -1,0 +1,2 @@
+webpackJsonp([12],{"./node_modules/json-loader/index.js!./.cache/json/freedom-for-wrists.json":function(o,e){o.exports={pathContext:{path:"/freedom-for-wrists/"}}}});
+//# sourceMappingURL=path---freedom-for-wrists-c497a2412908739b92f3.js.map

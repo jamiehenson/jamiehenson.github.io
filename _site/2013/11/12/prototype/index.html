@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-stack developer and multi-instrumentalist, currently immersed in the wonders of San Francisco.">
+
+    <title>Interactive Devices W4: Developing a prototype - Jamie Henson</title>
+
+    <link rel="canonical" href="http://jh47.com/2013/11/12/prototype/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jamie Henson</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="/cv/">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Interactive Devices W4: Developing a prototype</h1>
+                    
+                    <span class="meta">Posted by Jamie Henson on November 12, 2013</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Last week, we altered direction from our original course of action - heading towards a more collaborative and smaller-scale end goal instead of a large installation designed for a small number of participants at a time. Looking even further back to the start of the project, it was agreed that I would take the lead on the musical interfacing side of the project, due to my experience in the area on previous projects. This primarily involves the generation of music from the data extracted from the movement of the water.</p>
+
+<!-- more -->
+
+<p>Therefore, my task this week was to devise a way to get the water level sensors and the software synthesiser (FL Studio) to talk to each other. My pipeline was as follows:</p>
+
+<p><strong>Water sensor &gt; Arduino &gt; (MIDI Interface) &gt; DAW (FL Studio)</strong></p>
+
+<p>The sensor, Arduino and DAW were already a given, but the MIDI interface was still an unknown piece of the puzzle. I initially started by downloading and configuring openFrameworks, suggested by James in an earlier session, but eventually found that it was no longer suitable for purpose, as it would have been more useful when we were using the Kinect.</p>
+
+<p>After researching and trying out a number of methods including custom Arduino firmware that turned it into a MIDI controller in the eyes of a computer, and a bridge that piped raw results from the Arduino program into a modified <a href="http://www.eecs.umich.edu/nime2012/Proceedings/papers/131_Final_Manuscript.pdf">Kugelschwung</a> synthesiser - I eventually settled on a universally preferable option: Pure Data.</p>
+
+<p>Pure Data is the open-source cousin of Max/MSP, a highly popular visual programming language and interface for piecing together audio interfaces. Within a relatively short about of time, I was able to get the Arduino talking to FL Studio, using Firmata as the bridge between the Arduino and Pure Data, and Pure Data as a means to generate MIDI signals from the raw values the Arduino gave out. Then, using the free internal loopback tool LoopBe1, I fed the MIDI signals from Pure Data into FL Studio - where the signals could be processed into actual sound.</p>
+
+<p>Next week, I will be enhancing the quality of the sound, as well as expanding the breadth of the connection between the sensors and the synthesiser - allowing scope for the addition of additional sensors.</p>
+
+<p>Below is a video of my first basic synthesiser prototype in action. It may sound awful at the moment, but bear in mind that the prototype is in a very early stage of development!</p>
+
+<center><iframe src="//www.youtube.com/embed/NbIr9tQMA1E" height="252" width="448" frameborder="0"></iframe></center>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2013/11/06/refinement/" data-toggle="tooltip" data-placement="top" title="Interactive Devices W3: Idea refinement and planning">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2013/11/25/firstprototype/" data-toggle="tooltip" data-placement="top" title="Interactive Devices: Building the first complete prototype">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/HensonJamie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jamiehenson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Jamie Henson 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

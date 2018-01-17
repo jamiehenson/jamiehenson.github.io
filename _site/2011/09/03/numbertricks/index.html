@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-stack developer and multi-instrumentalist, currently immersed in the wonders of San Francisco.">
+
+    <title>Numbertricks - product of primes - Jamie Henson</title>
+
+    <link rel="canonical" href="http://jh47.com/2011/09/03/numbertricks/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jamie Henson</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="/cv/">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Numbertricks - product of primes</h1>
+                    
+                    <span class="meta">Posted by Jamie Henson on September 3, 2011</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>After letting my brain turn into a potato for many weeks over the holidays, I decided to keep my programming head warm with a bit of Java. So, I’ve been adding to a program I started about a week ago in the odd hour I have free to perform analysis on a single number, telling you features like its factors, what sequences it’s part of (Fibonacci etc) and various information about associated prime numbers.</p>
+
+<!-- more -->
+
+<p>The most recent thing I’ve bolted on to it was the algorithm to determine the product of primes of a number, something that used to drive me round the bend working out by hand in Discrete Maths 1 last year. Couldn’t find any code similar to this on the net, so I thought I’d post it in case anybody stumbles upon it here and finds it helpful. It won’t compile on its own since it depends on other sub-routines, but the process is here:</p>
+
+<p>For a bit of context on the inputs, the integer <strong>prinum</strong> is the value to test (lazily inheriting its name from the parent method), and the double array <strong>primes</strong> is an array of primes acquired from the parent function using my implementation of the Sieve of Eratosthenes algorithm.
+&lt;pre class="brush:java"&gt;String getProductofPrimes(int prinum, double[] primes)
+  {
+    int i=0,k=0;
+    double dpri = (double) prinum;
+    StringBuffer products = new StringBuffer();
+    String prodprim = “”;</p>
+
+<pre><code>for (i=0;i&amp;lt;prinum;i++)
+{
+  // Work up through the primes found before. If it is a factor, include
+  // and recurse. If not, move on to the next prime. Divide through.
+  while (((dpri/primes[i]) == Math.ceil(dpri/primes[i])) &amp;amp;&amp;amp; (dpri/primes[i]) != 1)
+  {
+    products.append((int)primes[i] + " * ");
+    dpri = dpri/primes[i];
+  }
+  // If the number found by dividing through is prime, you're done
+  for (k=0;k&amp;lt;prinum;k++)
+  {
+    if (primes[k] == dpri || dpri == 1)
+    {
+      products.append((int)dpri);
+      prodprim = products.toString();
+      return prodprim;
+    }
+  }
+}
+prodprim = products.toString();
+return prodprim;   }&lt;/pre&gt; I'm aware it's not very complex and probably not that efficient but hey, I'm fairly new to Java! At 400 lines for the main program I'm keen to see what I can extend it to, any nerdy suggestions would be welcome :) The compiled program can be [found](http://jh47.com/code/Numbertricks.class) on the Past Projects page, and is updated as I add to it.
+</code></pre>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2011/08/14/ring-of-actionscript-2-0/" data-toggle="tooltip" data-placement="top" title="Ring of ActionScript 2.0">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2011/09/09/haskellcrunching/" data-toggle="tooltip" data-placement="top" title="Haskell Crunching">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/HensonJamie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jamiehenson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Jamie Henson 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>
