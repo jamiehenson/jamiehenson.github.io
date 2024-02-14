@@ -1,2 +1,0 @@
-webpackJsonp([13],{"./node_modules/json-loader/index.js!./.cache/json/comfort-and-stagnation.json":function(o,n){o.exports={pathContext:{path:"/comfort-and-stagnation/"}}}});
-//# sourceMappingURL=path---comfort-and-stagnation-20fdf6985fe932169ed9.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([8],{"./node_modules/json-loader/index.js!./.cache/json/london-vs-sf.json":function(o,n){o.exports={pathContext:{path:"/london-vs-sf/"}}}});
-//# sourceMappingURL=path---london-vs-sf-d14a04cdacc8545b320d.js.map
